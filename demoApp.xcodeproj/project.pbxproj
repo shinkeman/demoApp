@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F225B3612CF39BA800997826 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = F225B3602CF39BA800997826 /* OHHTTPStubs */; };
+		F225B3632CF39BA800997826 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F225B3622CF39BA800997826 /* OHHTTPStubsSwift */; };
 		F2751D4E2CE9FBD1001E0B11 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F2751D4D2CE9FBC7001E0B11 /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F225B3612CF39BA800997826 /* OHHTTPStubs in Frameworks */,
+				F225B3632CF39BA800997826 /* OHHTTPStubsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +158,8 @@
 			);
 			name = demoAppTests;
 			packageProductDependencies = (
+				F225B3602CF39BA800997826 /* OHHTTPStubs */,
+				F225B3622CF39BA800997826 /* OHHTTPStubsSwift */,
 			);
 			productName = demoAppTests;
 			productReference = F2751D2D2CE9FB6E001E0B11 /* demoAppTests.xctest */;
@@ -214,6 +220,9 @@
 			);
 			mainGroup = F2751D0E2CE9FB6D001E0B11;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F225B35F2CF39BA800997826 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F2751D182CE9FB6D001E0B11 /* Products */;
 			projectDirPath = "";
@@ -568,6 +577,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F225B35F2CF39BA800997826 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F225B3602CF39BA800997826 /* OHHTTPStubs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F225B35F2CF39BA800997826 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubs;
+		};
+		F225B3622CF39BA800997826 /* OHHTTPStubsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F225B35F2CF39BA800997826 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2751D0F2CE9FB6D001E0B11 /* Project object */;
 }

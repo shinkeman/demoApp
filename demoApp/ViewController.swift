@@ -27,18 +27,18 @@ class ViewController: UIViewController {
         view.backgroundColor = .systemBackground
         navigationItem.title = "Repositories"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.accessibilityIdentifier = "navBar"
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        tableView.accessibilityIdentifier = "tableView"
 
         searchBar.searchBarStyle = UISearchBar.Style.default
         searchBar.placeholder = "Search a repo..."
@@ -46,6 +46,8 @@ class ViewController: UIViewController {
         searchBar.isTranslucent = false
 
         navigationItem.titleView = searchBar
+        searchBar.isAccessibilityElement = true
+        searchBar.accessibilityIdentifier = "searchBar"
         
         tableView.delegate = self
         tableView.dataSource = self

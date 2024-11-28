@@ -8,6 +8,7 @@ class DetailViewController: UIViewController {
         label.text = "The title of repository:"
         label.font = .systemFont(ofSize: 15)
         label.textColor = .systemGray
+        label.accessibilityIdentifier = "staticLabel"
 
         return label
     }()
@@ -16,6 +17,7 @@ class DetailViewController: UIViewController {
         var label = UILabel(frame: .zero)
         label.text = fullName
         label.font = .boldSystemFont(ofSize: 27)
+        label.accessibilityIdentifier = "nameLabel"
         
         return label
     }()
