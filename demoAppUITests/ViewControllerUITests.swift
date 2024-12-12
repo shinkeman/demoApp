@@ -54,15 +54,17 @@ final class ViewControllerUITest: XCTestCase {
 
         let firstTableCell = tableView.cells.firstMatch
         let expectation = expectation(for: exists, evaluatedWith: firstTableCell)
-        waitForExpectations(timeout: 10, handler: nil)
-        expectation.fulfill()
+
+        wait(for: [expectation], timeout: 2)
+
+        waitForSeconds(3)
 
         let cellCount = tableView.cells.count
         let lastTableCell = tableView.cells.allElementsBoundByIndex[cellCount-1]
 
         tableView.swipeUp()
 
-        XCTAssertTrue(lastTableCell.exists, "last cell is not on the table")
+        XCTAssertTrue(lastTableCell.waitForExistence(timeout: 3), "last cell is not on the table")
     }
     
     func testNavigation() {
@@ -80,12 +82,14 @@ final class ViewControllerUITest: XCTestCase {
         app.keyboards.buttons["search"].tap()
 
         // wait for data to load
+        waitForSeconds(3)
+
         let firstTableCell = tableView.cells.firstMatch
+
         let expectation = expectation(for: exists, evaluatedWith: firstTableCell)
-        waitForExpectations(timeout: 10, handler: nil)
+        wait(for: [expectation], timeout: 2)
 
         XCTAssertTrue(firstTableCell.exists, "cell 0 is not on the table")
-        expectation.fulfill()
 
         firstTableCell.tap()
 

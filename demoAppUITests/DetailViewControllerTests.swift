@@ -29,14 +29,17 @@ final class DetailViewControllerUITest: XCTestCase {
         app.keyboards.keys["l"].tap()
         app.keyboards.keys["e"].tap()
         app.keyboards.buttons["search"].tap()
+        
+        waitForSeconds(3)
 
         // wait for data to load
         let firstTableCell = tableView.cells.firstMatch
+
         let expectation = expectation(for: exists, evaluatedWith: firstTableCell)
-        waitForExpectations(timeout: 10, handler: nil)
+
+        wait(for: [expectation], timeout: 3)
 
         XCTAssertTrue(firstTableCell.exists, "cell 0 is not on the table")
-        expectation.fulfill()
 
         let cellName = firstTableCell.staticTexts.firstMatch.label
         firstTableCell.tap()
